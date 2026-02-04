@@ -1,52 +1,58 @@
 # Student Disciplines' Grades: Factorial Analysis & Dimensionality Reduction (PCA)
 
-Este repositório apresenta um estudo de caso completo sobre a aplicação de **Análise Fatorial (AF)** utilizando o método de **Componentes Principais (PCA)**. O objetivo é transformar um conjunto de dados de notas acadêmicas em dimensões latentes independentes, permitindo uma análise mais profunda do perfil estudantil.
+This repository presents a comprehensive case study on the application of **Factor Analysis (FA)** using the **Principal Component Analysis (PCA)** method. The goal is to transform a dataset of academic grades into independent latent dimensions, allowing for a deeper analysis of student profiles.
 
 ## 📖 Use Case Scenario
 
-Neste cenário, analisamos as notas de alunos em quatro disciplinas (features). Em vez de uma análise de clusterização tradicional (onde agrupamos observações semelhantes), aplicamos a Análise Fatorial para:
-1.  **Consolidar Features:** Unir disciplinas correlacionadas em componentes ortogonais (eixos independentes).
-2.  **Redução de Dimensionalidade:** Minimizar o número de eixos de análise (de 4 para 2 ou 3) mantendo o máximo de variância original.
-3.  **Identificar Construtos Latentes:** Revelar afinidades ocultas entre disciplinas que não são óbvias apenas com médias simples.
+In this scenario, we analyze students' grades in four disciplines (features). Instead of a traditional clustering analysis (where we group similar observations), we apply Factor Analysis to:
 
-
-
-## 🧬 Fundamentação Matemática e Pipeline
-
-O projeto segue um rigoroso pipeline estatístico baseado em dados padronizados (**Z-score**):
-
-* **Matriz de Correlação de Pearson:** Base para o cálculo do determinante e da equação polinomial característica.
-* **Eigenvalues (Autovalores):** Extraídos como raízes da equação polinomial, representam a variância absoluta intrínseca a cada componente. O critério de retenção baseia-se na variância relativa (Explicada/Total).
-* **Eigenvectors (Autovetores):** Coeficientes que determinam o peso de cada variável original na composição do novo eixo.
-* **Loadings:** Produto do peso da variável pela raiz quadrada do autovalor do componente, representando a correlação entre a variável e o fator.
-* **Communalities:** Medida de quanto da variância original de cada disciplina foi preservada após o descarte de componentes menos representativos.
-
-
-
-## 🛠️ Stack Tecnológica
-
-O projeto utiliza um ecossistema avançado de bibliotecas Python para computação científica e análise multivariada:
-
-* **Processamento:** `Pandas`, `NumPy`, `SciPy`, `Scikit-learn`.
-* **Estatística Avançada:** `Factor-Analyzer` (extração e rotação), `Pingouin` (testes de hipótese e correlação).
-* **Álgebra Simbólica:** `SymPy` (cálculo de polinômios característicos).
-* **Visualização:** `Matplotlib`, `Seaborn`, `Plotly`.
-
-## 🚀 Principais Utilidades desta Técnica
-
-* **Feature Engineering:** Redução de multicolinearidade para modelos de regressão.
-* **Data Summarization:** Sumarização de grandes volumes de variáveis em índices interpretáveis.
-* **Ranking & Scoring:** Criação de rankings baseados na soma ponderada de scores fatoriais pela variância relativa.
-* **Data Cleaning:** Identificação e descarte de "ruído" através da análise de unicidade.
-
-
-
-## 📊 Como Interpretar os Resultados
-
-1.  **Matriz de Cargas (Loadings):** Identifica a "assinatura" de cada fator (ex: Fator 1 focado em Exatas, Fator 2 em Humanas).
-2.  **Scree Plot / Variance Table:** Determina o ponto ideal de corte para a retenção de fatores.
-3.  **Factor Scores:** As novas coordenadas de cada aluno no espaço multidimensional reduzido.
+1. **Consolidate Features:** Merge correlated disciplines into orthogonal components (independent axes).
+2. **Dimensionality Reduction:** Minimize the number of analytical axes (from 4 to 2 or 3) while maintaining the maximum original variance.
+3. **Identify Latent Constructs:** Reveal hidden affinities between disciplines that are not obvious through simple averages alone.
 
 ---
-**Status do Projeto:** Concluído ✅  
-**Key Skills demonstradas:** Álgebra Linear, Estatística Multivariada, Machine Learning Não Supervisionado.
+
+## 🧬 Mathematical Foundation and Pipeline
+
+The project follows a rigorous statistical pipeline based on standardized data (**Z-score**):
+
+* **Pearson Correlation Matrix:** The basis for calculating the determinant and the characteristic polynomial equation.
+* **Eigenvalues:** Extracted as roots of the polynomial equation, they represent the absolute variance intrinsic to each component. The retention criterion is based on relative variance (Explained/Total).
+* **Eigenvectors:** Coefficients that determine the weight of each original variable in the composition of the new axis.
+* **Loadings:** The product of the variable's weight and the square root of the component's eigenvalue, representing the correlation between the variable and the factor.
+* **Communalities:** A measure of how much of the original variance of each discipline was preserved after discarding less representative components.
+
+---
+
+## 🛠️ Tech Stack
+
+The project utilizes an advanced ecosystem of Python libraries for scientific computing and multivariate analysis:
+
+* **Processing:** `Pandas`, `NumPy`, `SciPy`, `Scikit-learn`.
+* **Advanced Statistics:** `Factor-Analyzer` (extraction and rotation), `Pingouin` (hypothesis testing and correlation).
+* **Symbolic Algebra:** `SymPy` (calculation of characteristic polynomials).
+* **Visualization:** `Matplotlib`, `Seaborn`, `Plotly`.
+
+---
+
+
+
+## 🚀 Main Utilities of this Technique
+
+* **Feature Engineering:** Reducing multicollinearity for regression models.
+* **Data Summarization:** Summarizing large volumes of variables into interpretable indices.
+* **Ranking & Scoring:** Creating rankings based on the weighted sum of factor scores by relative variance.
+* **Data Cleaning:** Identifying and discarding "noise" through uniqueness analysis.
+
+---
+
+## 📊 How to Interpret the Results
+
+1.  **Loadings Matrix:** Identifies the "signature" of each factor (e.g., Factor 1 focused on STEM, Factor 2 on Humanities).
+2.  **Scree Plot / Variance Table:** Determines the ideal cutoff point for factor retention.
+3.  **Factor Scores:** The new coordinates for each student in the reduced multidimensional space.
+
+---
+
+**Project Status:** Completed ✅  
+**Key Skills Demonstrated:** Linear Algebra, Multivariate Statistics, Unsupervised Machine Learning.
